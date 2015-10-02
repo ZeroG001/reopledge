@@ -31,6 +31,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST)) {
 				width: 600px;
 				padding: 50px;
 				border: 1px solid black;
+				font-family: 'Helvetica';
 			}
 
 			.pledge-form .row {
@@ -38,9 +39,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST)) {
 			}
 
 			.pledge-form label {
-				display: inline-block;
-				width: 190px;
+
 			}
+
+
 
 			.pledge-form input {
 				border: 0px;
@@ -62,6 +64,23 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST)) {
 			.pledge-form-paypal {
 				display: none;
 			}
+
+			/* Pledge Form Custom Input Styles */
+			.pledge-company-checkbox label {
+				display: inline-block;
+				width: 170px;
+			}
+
+			/* This is that small text box near the checkboxes */
+			.pledge-company-checkbox input[type='text'] {
+				width: 50px;
+			}
+
+			.input-office-number-container label {
+				width: auto;
+			}
+
+			/* custom styles end */
 
 			.pledge-form-paypal button {
 				width: 200px;
@@ -171,19 +190,21 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST)) {
 
 				<input type="hidden" name="pledge_type"value="employee" />
 
+					<div class="pledge-donar-info">
 
-					<div class="row">
+						<div class="row">
 
-						<div class="six columns">
-							<label for="pledge-name"> Name </label>
-							<input type="text" id="pledge-name" name="name" />
+							<div class="six columns">
+								<label for="pledge-name"> Name </label>
+								<input type="text" id="pledge-name" name="name" />
+							</div>
+
+							<div class="six columns">
+								<label for="pledge-address"> Address </label>
+								<input type="text" id="pledge-address" name="address" />
+							</div>
+							
 						</div>
-
-						<div class="six columns">
-							<label for="pledge-address"> Address </label>
-							<input type="text" id="pledge-address" name="address" />
-						</div>
-						
 
 					</div>
 
@@ -194,26 +215,36 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST)) {
 
 	 					<div class="row">
 
-	 						<div class="twelve columns">
+	 						<div class="six columns">
 								<label for="check-reo-family" > REO/MB/JJ/CR </label>
 								<input type="radio" id="check-reo-family" name="company" value="REO-Family" />
 
-								<label for="check-office-number"> Office # </label>
-								<input type="text" id="" name="office_number" value="" maxlength="5"/>
+								<div class="input-office-number-container">
+									<label for="check-office-number"> Office # </label>
+									<input type="text" id="" name="office_number" value="" maxlength="5"/>
+								</div>
+
 							</div>
-
-						</div>
-
-						<div class="row">
 
 							<div class="six columns">
 								<label for="check-capital-title"> Capital Title </label>
 								<input type="radio" id="check-capital-title" name="company" value="capital-title" />
 							</div>
 
+						</div>
+
+						<div class="row">
+
+
+
 							<div class="six columns">
 								<label for="check-jamco-front-aamc"> JAMCO/Front St/AAMC </label>
 								<input type="radio" id="check-jamco-front-aamc" name="company" value="jamco-font-aamc" />
+							</div>
+
+							<div class="six columns">
+								<label for="check-insurance-one"> Insurance One </label>
+								<input type="radio" id="check-insurance-one" name="company" value="insurance-one" />
 							</div>
 
 						</div>
@@ -222,10 +253,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST)) {
 						<div class="row">
 
 
-							<div class="six columns">
-								<label for="check-insurance-one"> Insurance One </label>
-								<input type="radio" id="check-insurance-one" name="company" value="insurance-one" />
-							</div>
+
 
 							<div class="six columns">
 								<label for="check-relo"> Relocation America </label>
@@ -306,26 +334,36 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST)) {
 
 	 					<div class="row">
 
-	 						<div class="twelve columns">
+	 						<div class="six columns">
 								<label for="check-reo-family" > REO/MB/JJ/CR </label>
 								<input type="radio" id="check-reo-family" name="company" value="REO-Family" />
 
-								<label for="check-office-number"> Office # </label>
-								<input type="text" id="" name="office_number" value="" maxlength="5"/>
+								<div class="input-office-number-container">
+									<label for="check-office-number"> Office # </label>
+									<input type="text" id="" name="office_number" value="" maxlength="5"/>
+								</div>
+
 							</div>
-
-						</div>
-
-						<div class="row">
 
 							<div class="six columns">
 								<label for="check-capital-title"> Capital Title </label>
 								<input type="radio" id="check-capital-title" name="company" value="capital-title" />
 							</div>
 
+						</div>
+
+						<div class="row">
+
+
+
 							<div class="six columns">
 								<label for="check-jamco-front-aamc"> JAMCO/Front St/AAMC </label>
 								<input type="radio" id="check-jamco-front-aamc" name="company" value="jamco-font-aamc" />
+							</div>
+
+							<div class="six columns">
+								<label for="check-insurance-one"> Insurance One </label>
+								<input type="radio" id="check-insurance-one" name="company" value="insurance-one" />
 							</div>
 
 						</div>
@@ -333,10 +371,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST)) {
 
 						<div class="row">
 
-							<div class="six columns">
-								<label for="check-insurance-one"> Insurance One </label>
-								<input type="radio" id="check-insurance-one" name="company" value="insurance-one" />
-							</div>
+
+
 
 							<div class="six columns">
 								<label for="check-relo"> Relocation America </label>
@@ -348,41 +384,44 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST)) {
 					</div>
 
 
-					<div class="row">
+					<div class="pledge-">
+						<div class="row">
 
-						<div class="twelve columns">
-							<label for="employee-amount"> Amount Donated (minimum $5) </label>
-							<input type="text" name="pledge_amount"> </input>
+							<div class="twelve columns">
+								<label for="employee-amount"> Amount Donated (minimum $5) </label>
+								<input type="text" name="pledge_amount"> </input>
+							</div>
+							
 						</div>
-						
+
+						<h3> Number of comission check(s) to donate from: </h3>
+
+						<div class="row">
+
+							<div class="six columns">
+								<input type="radio" id="check-all" name="number_of_checks" value="all" />
+								<label for="comission-check-frequency"> Every Comission Check </label>
+							</div>
+
+							<div class="six columns">
+								<input type="radio" id="check-amount" name="number_of_checks" value="0" />
+								<label for="check-amount"> # of Comission Check(s) </label>
+								<input type="text" maxlength="3" id="check-amount-text" />
+							</div>
+
+						</div>
+
+
+						<div class="row">
+
+							<div class="twelve columns">
+								<label for="paynumber"> Pay Number</label>
+								<input type="text" name="paynumber" id="paycheck" maxlength="6">
+							</div>
+
+						</div>
 					</div>
 
-					<h3> Number of comission check(s) to donate from: </h3>
-
-					<div class="row">
-
-						<div class="six columns">
-							<input type="radio" id="check-all" name="number_of_checks" value="all" />
-							<label for="comission-check-frequency"> Every Comission Check </label>
-						</div>
-
-						<div class="six columns">
-							<input type="radio" id="check-amount" name="number_of_checks" value="0" />
-							<label for="check-amount"> # of Comission Check(s) </label>
-							<input type="text" maxlength="3" id="check-amount-text" />
-						</div>
-
-					</div>
-
-
-					<div class="row">
-
-						<div class="twelve columns">
-							<label for="paynumber"> Pay Number</label>
-							<input type="text" name="paynumber" id="paycheck" maxlength="6">
-						</div>
-
-					</div>
 
 					<!-- This is where the signature would usually be but we aren't going to add that her  -->
 
