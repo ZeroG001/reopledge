@@ -1,5 +1,7 @@
 $(function($){
 
+
+
 	function radio_input($radio_object, $input_object) {
 		$input_object.on('keyup', function(){
 			$radio_object.val( $input_object.val() ) ;
@@ -32,6 +34,46 @@ $(function($){
 		$('.pledge-form-paypal').show();
 		$('.tab').removeClass("tab-selected");
 		$(this).addClass("tab-selected");
+	});
+
+
+
+	// ==== Open Modal ====
+	$('.pledge-submit').click(function(e){
+
+		e.preventDefault();
+
+		$my_form = $(this).closest("form");
+
+
+
+		$('body').css("overflow", "hidden");
+		$('.pledge-modal').addClass('modal-fadein');
+		$('.pledge-modal-box').addClass('modal-slidein');
+		$('.pledge-modal').css("overflow", "scroll");
+
+		$('.pledge-modal-submit').click(function(e) {
+
+			if($('#terms-checkbox').prop("checked")) {
+				$my_form.submit();
+			} else {
+				$('.terms-checkbox-container').css({
+					"color":"red",
+					"font-weight":"bold"
+				})
+			};
+
+		});
+
+	});
+
+	// ==== Close Modal ====
+	$('.pledge-modal-close').click(function(){
+		$('body').css("overflow", "scroll");
+		$('.pledge-modal-box').removeClass('modal-slidein');
+		$('.pledge-modal').removeClass('modal-fadein');
+
+
 	});
 
 })(Jquery);
