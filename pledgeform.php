@@ -123,7 +123,70 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST)) {
 				}
 			}
 
+			@-webkit-keyframes modal-fadein {
+				from {
+					opacity: 0;
+				}
+				to {
+					opacity: 1;
+				}
+			}
+
+
+			@-o-keyframes modal-fadein {
+				from {
+					opacity: 0;
+				}
+				to {
+					opacity: 1;
+				}
+			}
+
+
+			@keyframes modal-fadein {
+				from {
+					opacity: 0;
+				}
+				to {
+					opacity: 1;
+				}
+			}
+
+
+
+
+
 			@-moz-keyframes modal-slidein {
+				from {
+
+					top: 50px;
+				}
+				to {
+					top: 0px;
+				}
+			}
+
+			@-webkit-keyframes modal-slidein {
+				from {
+
+					top: 50px;
+				}
+				to {
+					top: 0px;
+				}
+			}
+
+			@-o-keyframes modal-slidein {
+				from {
+
+					top: 50px;
+				}
+				to {
+					top: 0px;
+				}
+			}
+
+			@keyframes modal-slidein {
 				from {
 
 					top: 50px;
@@ -293,15 +356,18 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST)) {
 				padding: 10px 14px;
 				width: 150px;
 				height: 55px;
-				background: #D71A21;
+				background: #81A8B8;
 				border: 0;
 				cursor: pointer;
 				outline: none;
 			}
 
+.paypal-button-submit:hover {
+				background: #7198A8;
+			}
 
+			
 
-			.paypal_btn:hover{ background: #e05c04; }
 
 			.pledge-tab-container {
 				position: relative;
@@ -324,7 +390,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST)) {
 				width: 100%;
 				height: 50px;
 				margin: 50px auto 0px auto;
-				background-color: #D71A21;
+				background-color: #81A8B8;
 				border: 0px solid black;
 				color: white;
 				border-radius: 5px;
@@ -332,7 +398,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST)) {
 
 			.pledge-submit:hover {
 				cursor: pointer;
-				background-color: #E72A31; 
+				background-color: #7198A8; 
 			}
 
 			.terms-checkbox-container {
@@ -365,10 +431,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST)) {
 				display: block;
 				width: 100%;
 				height: 50px;
-				background-color: #D71A21;
+				background-color: #81A8B8;
 				border: 0px solid black;
 				color: white;
 				border-radius: 5px;
+			}
+
+			.pledge-modal-submit:hover {
+				background-color: #7198A8;
 			}
 
 		</style>
