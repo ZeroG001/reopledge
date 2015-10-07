@@ -226,8 +226,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST)) {
 			    margin:-1px 4px 0 0;
 			    vertical-align:middle;
 			    cursor:pointer;
-			    -moz-border-radius:  50%;
+			    -moz-border-radius: 50%;
 			    border-radius:  50%;
+			    border: 5px solid black;
+			    box-sizing: border-box;
 			}
 
 			.pledge-form input[type="radio"] + label span {
@@ -258,7 +260,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST)) {
 				text-indent: 2px;
 				border: 0px;
 				border-radius: 2px;
-
+			    padding: 5px 10px;
+			    margin-left: 5px;
 			}
 
 			#pledge-form-employee {
@@ -346,20 +349,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST)) {
 			/* form sections end */
 
 			.pledge-form-paypal .paypal-button-submit {
+				box-sizing: border-box;
 				display: block;
+				width: 50%;
 				margin: 0px auto;
-				font-family: inherit;
-				font-size: 14px;
-				font-weight: bold;
-				color: #fff;
-				text-align: center;
-				padding: 10px 14px;
-				width: 150px;
-				height: 55px;
-				background: #81A8B8;
-				border: 0;
-				cursor: pointer;
-				outline: none;
+				font-size: 1.4rem;
+				height: 50px;
+				background-color: #81A8B8;
+				border: 0px solid black;
+				color: white;
+				border-radius: 5px;
 			}
 
 .paypal-button-submit:hover {
@@ -387,13 +386,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST)) {
 
 			.pledge-submit {
 				display: block;
-				width: 100%;
+				width: 50%;
 				height: 50px;
 				margin: 50px auto 0px auto;
 				background-color: #81A8B8;
 				border: 0px solid black;
 				color: white;
 				border-radius: 5px;
+				font-size: 1.4rem;
 			}
 
 			.pledge-submit:hover {
@@ -429,7 +429,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST)) {
 			.pledge-modal-submit {
 				box-sizing: border-box;
 				display: block;
-				width: 100%;
+				width: 50%;
+				margin: 0px auto;
+				font-size: 1.4rem;
 				height: 50px;
 				background-color: #81A8B8;
 				border: 0px solid black;
