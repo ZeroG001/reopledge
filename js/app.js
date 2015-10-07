@@ -9,7 +9,7 @@ $(function($){
 	}
 
 	radio_input($('#check-amount'), $('#check-amount-text'));
-
+	radio_input($('#pledge-amount-other'), $('#pledge-amount-other-text'));
 
 
 	// The tab that you click depends on the tab thats

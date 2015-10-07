@@ -16,438 +16,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST)) {
 		
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="css/sk_grid.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
 
-
-		<style>
-
-		/* 
-
-		Color Palette 
-		http://www.colourlovers.com/palette/2462496/Wireframed
-
-		*/
-
-
-		/* Modal Styles
-		====================== */
-
-			.pledge-modal {
-				box-sizing: border-box;
-				background-color: rgba(70,70,70,0.5);
-				width: 100%;
-				height: 100%;
-				top:0;
-				left:0;
-				position: fixed;
-				z-index: 40;
-				opacity: 0;
-				display: none;				
-			}
-
-			.modal-fadein {
-				display: block;
-
-				-moz-animation: modal-fadein 0.5s ease;
-				-webkit-animation: modal-fadein 0.5s ease;
-				-o-animation: modal-fadein 0.5s ease;
-				animation: modal-fadein 0.5s ease;
-
-				-webkit-animation-fill-mode: forwards;
-				-o-animation-fill-mode: forwards;
-				-moz-animation-fill-mode: forwards;
-				animation-fill-mode: forwards;
-			}
-
-
-			.modal-slidein {
-				display: block;
-
-				-moz-animation: modal-slidein 0.5s ease;
-				-webkit-animation: modal-slidein 0.5s ease;
-				-o-animation: modal-slidein 0.5s ease;
-				animation: modal-slidein 0.5s ease;
-
-				-webkit-animation-fill-mode: forwards;
-				-o-animation-fill-mode: forwards;
-				-moz-animation-fill-mode: forwards;
-				animation-fill-mode: forwards;
-			}
-
-
-
-			.pledge-modal-box {
-				box-sizing: border-box;
-				position: relative;
-				background-color: #E8F3F8;
-				display: block;
-				height: 420px;
-				min-width: 300px;
-				max-width: 500px ;
-				width: 100%;
-				margin: 10% auto;
-				padding: 10px;
-				border-radius: 3px;
-				top: 0;
-			}
-
-			.modal-button-footer {
-				position: absolute;
-				box-sizing: border-box;
-				width: 100%;
-				padding: 10px;
-				bottom: 0;
-				left: 0;
-
-			}
-
-			.modal-terms-container {
-				background-color: #DBE6EC;
-				padding: 10px;
-			}
-
-			.modal-terms-container p {
-				font-size: 0.9rem;
-				font-weight: normal;
-			}
-
-
-
-			/* Modal Animations */
-
-			@-moz-keyframes modal-fadein {
-				from {
-					opacity: 0;
-				}
-				to {
-					opacity: 1;
-				}
-			}
-
-			@-webkit-keyframes modal-fadein {
-				from {
-					opacity: 0;
-				}
-				to {
-					opacity: 1;
-				}
-			}
-
-
-			@-o-keyframes modal-fadein {
-				from {
-					opacity: 0;
-				}
-				to {
-					opacity: 1;
-				}
-			}
-
-
-			@keyframes modal-fadein {
-				from {
-					opacity: 0;
-				}
-				to {
-					opacity: 1;
-				}
-			}
-
-
-
-
-
-			@-moz-keyframes modal-slidein {
-				from {
-
-					top: 50px;
-				}
-				to {
-					top: 0px;
-				}
-			}
-
-			@-webkit-keyframes modal-slidein {
-				from {
-
-					top: 50px;
-				}
-				to {
-					top: 0px;
-				}
-			}
-
-			@-o-keyframes modal-slidein {
-				from {
-
-					top: 50px;
-				}
-				to {
-					top: 0px;
-				}
-			}
-
-			@keyframes modal-slidein {
-				from {
-
-					top: 50px;
-				}
-				to {
-					top: 0px;
-				}
-			}
-
-			/* modal animations end */
-
-		/* modal styles end */ 
-
-
-		body {
-			font-family: 'Open Sans', sans-serif;
-		}
-
-
-			.pledge-form {
-				width: 600px;
-				padding: 20px;
-				background-color: #E8F3F8;
-				
-			}
-
-			.pledge-form input[type="radio"] {
-			    display:none;
-			}
-			.pledge-form input[type="radio"] + label {
-			    color: #292321;
-			}
-			.pledge-form input[type="radio"] + label span {
-			    display:inline-block;
-			    width:19px;
-			    height:19px;
-			    margin:-1px 4px 0 0;
-			    vertical-align:middle;
-			    cursor:pointer;
-			    -moz-border-radius: 50%;
-			    border-radius:  50%;
-			    border: 5px solid black;
-			    box-sizing: border-box;
-			}
-
-			.pledge-form input[type="radio"] + label span {
-			     background-color:#292321;
-			}
-
-			.pledge-form input[type="radio"]:checked + label span{
-			     background-color:red;
-			}
-
-			.pledge-form input[type="radio"] + label span,
-			.pledge-form input[type="radio"]:checked + label span {
-			  -webkit-transition:background-color 0.2s linear;
-			  -o-transition:background-color 0.2s linear;
-			  -moz-transition:background-color 0.2s linear;
-			  transition:background-color 0.2s linear;
-			}
-
-			.pledge-form .row {
-				margin: 10px 0px;
-			}
-
-			.pledge-form label:hover {
-				cursor: pointer;
-			}
-
-			.pledge-form input[type="text"] {
-				text-indent: 2px;
-				border: 0px;
-				border-radius: 2px;
-			    padding: 5px 10px;
-			    margin-left: 5px;
-			}
-
-			#pledge-form-employee {
-				display: hidden;
-			
-			}
-
-			#pledge-form-sales-assoc {
-				display: none;
-				
-			}
-
-			.pledge-form-paypal {
-				display: none;
-				
-			}
-
-
-			.tab {
-				display: inline-block;
-				width: 150px;
-				font-weight: bold;
-				padding: 10px;
-				text-align: center;
-				box-sizing: border-box;
-				background-color: #DBE6EC;
-			}
-
-			.tab-selected {
-				border-bottom: 0px;
-				background-color: #E8F3F8;
-			}
-
-			.tab:hover {
-				cursor: pointer;
-				
-			}
-
-
-
-			/* Pledge Form Custom Input Styles */
-			.pledge-company-checkbox label {
-				display: inline-block;
-				width: 200px;
-			}
-
-			/* This is that small text box near the checkboxes */
-			.pledge-company-checkbox input[type='text'] {
-				width: 50px;
-			}
-
-			.input-office-number-container label {
-				width: auto;
-			}
-
-			.input-office-number-container label,
-			.input-office-number-container input {
-				position: relative;
-				left: 26px;
-			}
-
-
-
-
-			#check-amount-text {
-				width: 60px;
-			}
-
-
-			/* custom styles end */
-
-			/* Form Sections */
-			.pledge-donar-info, 
-			.pledge-company-checkbox,
-			.pledge-check-info {
-				box-sizing: border-box;
-				/*border: 1px solid black;*/
-				padding: 10px;
-				background-color: #DBE6EC;
-				margin-bottom: 10px;
-
-
-			}
-
-			/* form sections end */
-
-			.pledge-form-paypal .paypal-button-submit {
-				box-sizing: border-box;
-				display: block;
-				width: 50%;
-				margin: 0px auto;
-				font-size: 1.4rem;
-				height: 50px;
-				background-color: #81A8B8;
-				border: 0px solid black;
-				color: white;
-				border-radius: 5px;
-			}
-
-.paypal-button-submit:hover {
-				background: #7198A8;
-			}
-
-			
-
-
-			.pledge-tab-container {
-				position: relative;
-				top: 1px;
-				display: block;
-				width: 500px;
-			}
-
-
-			.pledge-company-checkbox .row {
-				margin-bottom: 30px;
-			}
-
-			.pledge-check-info .row {
-				margin-bottom: 30px;
-			}
-
-			.pledge-submit {
-				display: block;
-				width: 50%;
-				height: 50px;
-				margin: 50px auto 0px auto;
-				background-color: #81A8B8;
-				border: 0px solid black;
-				color: white;
-				border-radius: 5px;
-				font-size: 1.4rem;
-			}
-
-			.pledge-submit:hover {
-				cursor: pointer;
-				background-color: #7198A8; 
-			}
-
-			.terms-checkbox-container {
-				width: 200px;
-				text-align: center;
-				margin: 0px auto;
-			}
-
-			.terms-checkbox-container label:hover {
-				cursor: pointer;
-			}
-
-			.pledge-modal-close {
-				border-radius: 50%;
-				background-color: white;
-				position: absolute;
-				right: -15;
-				top: -15;
-			}
-
-			.pledge-modal-close:hover {
-
-				background-color: #DEDEDE;
-				cursor: pointer;
-
-			}
-
-			.pledge-modal-submit {
-				box-sizing: border-box;
-				display: block;
-				width: 50%;
-				margin: 0px auto;
-				font-size: 1.4rem;
-				height: 50px;
-				background-color: #81A8B8;
-				border: 0px solid black;
-				color: white;
-				border-radius: 5px;
-			}
-
-			.pledge-modal-submit:hover {
-				background-color: #7198A8;
-			}
-
-		</style>
 
 	</head>
 
 	<body>
+
+
+
 		<h3> REO Pledge Form </h3>
 
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
@@ -470,11 +47,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST)) {
 					<div class="modal-terms-container">
 						<h4> Terms and Conditions </h4>
 						
-						<p> By clikcing "I Agree" you are accepting the terms and contions. Lorem ipsum dolor sit amet, consectetur 
-							adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad 
-							minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
-							cillum dolore eu fugiat nulla pariatur 
+						<p> 
+							By selecting the "I Accept" button, you are signing this charitable contribution pledge card electronically. 
+							You agree your electronic signature is the equivalent of your manual signature on this pledge card. 
+							By selecting "I Accept" you consent to submitting your charitable contribution commitment via electronic media.
 						</p>
 					
 						<div class="terms-checkbox-container">
@@ -498,10 +74,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST)) {
 
 				<div class="tab tab-selected" id="pledge-form-tab1">
 					Employee
-				</div>
-
-				<div class="tab" id="pledge-form-tab2">
-					Sales Assoc
 				</div>
 
 				<div class="tab" id="pledge-form-tab3">
@@ -529,7 +101,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST)) {
 			<!-- ================ FORM 1 ================== -->
 			<!-- ========================================== -->
 
-			<form action="#" method="post" class="pledge-form" id="pledge-form-employee">
+			<form action="#" method="post" class="pledge-form form-show" id="pledge-form-employee">
 
 				<input type="hidden" name="pledge_type"value="employee" />
 
@@ -551,12 +123,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST)) {
 
 					</div>
 				
-
+					<!-- =============================== -->
+					<!-- Form 1 Section 2 - Company Info -->
+					<!-- =============================== -->
  					<div class="pledge-company-checkbox">
 
 	 					<div class="row">
 
-	 						<div class="six columns">
+	 						<div class="four columns">
 								<input type="radio" id="check-reo-family" name="company" value="REO-Family" />
 								<label for="check-reo-family" ><span></span> REO/MB/JJ/CR </label>
 
@@ -567,49 +141,96 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST)) {
 
 							</div>
 
-							<div class="six columns">
+							<div class="four columns">
 								<input type="radio" id="check-capital-title" name="company" value="capital-title" />
 								<label for="check-capital-title"><span></span> Capital Title </label>
 							</div>
 
-						</div>
-
-						<div class="row">
-
-
-
-							<div class="six columns">
-								<input type="radio" id="check-jamco-front-aamc" name="company" value="jamco-font-aamc" />
-								<label for="check-jamco-front-aamc"><span></span> JAMCO/Front St/AAMC </label>
-							</div>
-
-							<div class="six columns">
+							<div class="four columns">
 								<input type="radio" id="check-insurance-one" name="company" value="insurance-one" />
 								<label for="check-insurance-one"><span></span> Insurance One </label>
 							</div>
-
-						</div>
 						
 
-						<div class="row">
 
-							<div class="six columns">
+
+							</div>
+
+						<div class="row">
+							<div class="four columns">
 								<input type="radio" id="check-relo" name="company" value="insurance-one" />
 								<label for="check-relo"><span></span> Relocation America </label>
 							</div>
 
+							<div class="four columns">
+								<input type="radio" id="check-jamco-front-aamc" name="company" value="jamco-font-aamc" />
+								<label for="check-jamco-front-aamc"><span></span> JAMCO/Front St/AAMC </label>
+							</div>
 						</div>
+						
 
 					</div>
 
+
+					<!-- =============================== -->
+					<!-- Form 1 Section 3 - Payment Info -->
+					<!-- =============================== -->
 					<div class="pledge-check-info">
 
 						<div class="row">
 
-							<div class="twelve columns">
-								<label for="employee-amount"> Amount Donated (minimum $5) </label>
-								<input type="text" id="employee-amount" name="pledge_amount"> </input>
+							<div class="four columns">
+								<input class="pledge-amount-button" id="pledge-amount-10" type="radio" name="pledge_amount" value="10" /> 
+								<label for="pledge-amount-10"><span></span> $ 10 </label>
 							</div>
+
+							<div class="four columns">
+								<input class="pledge-amount-button" id="pledge-amount-25" type="radio" name="pledge_amount" value="25" /> 
+								<label for="pledge-amount-25" ><span></span> $ 25 </label>
+							</div>
+
+						
+
+
+
+						
+
+							<div class="four columns">
+								<input class="pledge-amount-button" id="pledge-amount-50" type="radio" name="pledge_amount" value="50" /> 
+								<label for="pledge-amount-50"><span></span> $ 50 </label>
+							</div>
+						</div>
+
+						<div class="row">
+
+							<div class="four columns">
+								<input class="pledge-amount-button" id="pledge-amount-100" type="radio" name="pledge_amount" value="100" /> 
+								<label for="pledge-amount-100"><span></span> $ 100 </label>
+								
+							</div>
+							
+						
+
+
+						
+
+							<div class="eight columns"> 
+								<input class="pledge-amount-button-text" id="pledge-amount-other" type="radio" name="pledge_amount" value="other" /> 
+								<label for="pledge-amount-other"><span></span> Other </label> 
+								$<input type="text" maxlength="10" id="pledge-amount-other-text" />
+							</div>
+
+						</div> 
+
+
+							<div class="row">
+
+							<!-- 
+								<div class="twelve columns">
+									<label for="employee-amount"> Amount Donated (minimum $5) </label>
+									<input type="text" id="employee-amount" name="pledge_amount"> </input>
+								</div> 
+							-->
 
 						</div>
 
@@ -629,130 +250,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST)) {
 
 						</div>
 
-					</div>
-
-
-					<!-- This is where the signature would usually be but we aren't going to add that her  -->
-
-					<div class="form-button-control"> 
-						<input class="pledge-submit" type="submit" value="Donate"/>
-					</div>
-
-			</form>
-
-
-
-
-			<!-- ========================================== -->
-			<!-- ================ FORM 2 ================== -->
-			<!-- ========================================== -->
-
-			<!-- This form should post to a database -->
-			<form action="#" method="post" class="pledge-form" id="pledge-form-sales-assoc">
-
-				<input type="hidden" name="pledge_type" value="sales_assoc" />
-
-					<div class="pledge-donar-info">
-						<div class="row">
-
-							<div class="six columns">
-								<label for="assoc-pledge-name"> Name </label>
-								<input type="text" id="assoc-pledge-name" name="name" />
-							</div>
-
-							<div class="six columns">
-								<label for="assoc-pledge-address"> Address </label>
-								<input type="text" id="assoc-pledge-address" name="address" />
-							</div>
-
-						</div>
-					</div>
-
-				<div class="pledge-company-checkbox">
-
-	 					<div class="row">
-
-	 						<div class="six columns">
-								<input type="radio" id="assoc-check-reo-family" name="company" value="REO-Family" />
-								<label for="assoc-check-reo-family" ><span></span> REO/MB/JJ/CR </label>
-
-								<div class="input-office-number-container">
-									<label for="check-office-number"> Office # </label>
-									<input type="text" id="" name="office_number" value="" maxlength="4"/>
-								</div>
-
-							</div>
-
-							<div class="six columns">
-								<input type="radio" id="assoc-check-capital-title" name="company" value="capital-title" />
-								<label for="assoc-check-capital-title"><span></span> Capital Title </label>
-							</div>
-
-						</div>
-
-						<div class="row">
-
-
-
-							<div class="six columns">
-								<input type="radio" id="assoc-check-jamco-front-aamc" name="company" value="jamco-font-aamc" />
-								<label for="assoc-check-jamco-front-aamc"><span></span> JAMCO/Front St/AAMC </label>
-							</div>
-
-							<div class="six columns">
-								<input type="radio" id="assoc-check-insurance-one" name="company" value="insurance-one" />
-								<label for="assoc-check-insurance-one"><span></span> Insurance One </label>
-							</div>
-
-						</div>
-						
-
-						<div class="row">
-
-							<div class="six columns">
-								<input type="radio" id="assoc-check-relo" name="company" value="insurance-one" />
-								<label for="assoc-check-relo"><span></span> Relocation America </label>
-							</div>
-
-						</div>
-
-					</div>
-
-
-					<div class="pledge-check-info">
-
-						<div class="row">
-
-							<div class="twelve columns">
-								<label for="assoc-employee-amount"> Amount Donated (minimum $5) </label>
-								<input type="text" name="assoc-pledge_amount"> </input>
-							</div>
-							
-						</div>
-
-						<div class="row">
-
-							<div class="six columns">
-								<input type="radio" id="assoc-check-all" name="number_of_checks" value="all" />
-								<label for="assoc-check-all"><span></span> Every <strong>Comission Check</strong> </label>
-							</div>
-
-							<div class="six columns">
-								<input type="radio" id="assoc-check-amount" name="number_of_checks" value="0" />
-								<label for="assoc-check-amount"><span></span> # of Comission Check(s) </label>
-								<input type="text" maxlength="3" id="check-amount-text" />
-							</div>
-
-						</div>
-
-
-						<div class="row">
-
-							<div class="twelve columns">
-								<label for="assoc-paynumber"> Pay Number</label>
-								<input type="text" name="assoc-paynumber" id="paycheck" maxlength="6">
-							</div>
-
+						<div class="row"> 	
+							<label for="pledge-comments" id="pledge-comments-label"> Comments </label> 
+							<textarea name="comments" id="pledge-comments"> </textarea>
 						</div>
 
 					</div>
@@ -765,6 +265,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST)) {
 					</div>
 
 			</form>
+
 
 			<div class="pledge-form pledge-form-paypal">
 
