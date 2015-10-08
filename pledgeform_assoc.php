@@ -137,7 +137,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST)) {
 
 									<div class="input-office-number-container">
 										<label for="check-office-number"><span></span> Office # </label>
-										<input type="text" id="" name="office_number" value="" maxlength="4"/>
+										<input type="text" id="" name="office_number" value="n/a" maxlength="4"/>
 									</div>
 
 								</div>
