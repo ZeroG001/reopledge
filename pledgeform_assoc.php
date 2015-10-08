@@ -12,8 +12,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST)) {
 
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 		<meta name="Viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-
-		
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="css/sk_grid.css">
 		<link rel="stylesheet" type="text/css" href="css/main.css">
@@ -98,14 +96,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST)) {
 
 
 			<!-- ========================================== -->
-			<!-- ================ FORM 1 ================== -->
-			<!-- ========================================== -->
-
-	
-
-
-
-			<!-- ========================================== -->
 			<!-- ================ FORM 2 ================== -->
 			<!-- ========================================== -->
 
@@ -186,35 +176,68 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST)) {
 
 						<div class="row">
 
-							<div class="twelve columns">
-								<label for="assoc-employee-amount"> Amount Donated (minimum $5) </label>
-								<input type="text" name="assoc-pledge_amount"> </input>
+							<div class="four columns">
+								<input class="pledge-amount-button" id="pledge-amount-10" type="radio" name="pledge_amount" value="10" /> 
+								<label for="pledge-amount-10"><span></span> $ 10 </label>
+							</div>
+
+							<div class="four columns">
+								<input class="pledge-amount-button" id="pledge-amount-25" type="radio" name="pledge_amount" value="25" /> 
+								<label for="pledge-amount-25" ><span></span> $ 25 </label>
+							</div>
+
+						
+							<div class="four columns">
+								<input class="pledge-amount-button" id="pledge-amount-50" type="radio" name="pledge_amount" value="50" /> 
+								<label for="pledge-amount-50"><span></span> $ 50 </label>
+							</div>
+						</div>
+
+						<div class="row">
+
+							<div class="four columns">
+								<input class="pledge-amount-button" id="pledge-amount-100" type="radio" name="pledge_amount" value="100" /> 
+								<label for="pledge-amount-100"><span></span> $ 100 </label>
+								
 							</div>
 							
-						</div>
+						
+
+
+						
+
+							<div class="eight columns"> 
+								<input class="pledge-amount-button-text" id="pledge-amount-other" type="radio" name="pledge_amount" value="other" /> 
+								<label for="pledge-amount-other"><span></span> Other </label> 
+								$<input type="text" maxlength="10" id="pledge-amount-other-text" />
+							</div>
+
+						</div> 
+
+
+						<!--
+ 							<div class="row">
+ 
+								<div class="twelve columns">
+									<label for="employee-amount"> Amount Donated (minimum $5) </label>
+									<input type="text" id="employee-amount" name="pledge_amount"> </input>
+								</div> 
+							
+							</div>
+						 -->
+
 
 						<div class="row">
 
 							<div class="six columns">
-								<input type="radio" id="assoc-check-all" name="number_of_checks" value="all" />
-								<label for="assoc-check-all"><span></span> Every <strong>Comission Check</strong> </label>
+								<input type="radio" id="check-all" name="number_of_checks" value="all" />
+								<label for="check-all"><span></span> Every <strong>Paycheck</strong> </label>
 							</div>
 
 							<div class="six columns">
-								<input type="radio" id="assoc-check-amount" name="number_of_checks" value="0" />
-								<label for="assoc-check-amount"><span></span> # of Comission Check(s) </label>
+								<input type="radio" id="check-amount" name="number_of_checks" value="0" />
+								<label for="check-amount"><span></span>  Number of <strong>Paycheck(s)</strong> </label>
 								<input type="text" maxlength="3" id="check-amount-text" />
-							</div>
-
-						</div>
-
-
-
-						<div class="row">
-
-							<div class="twelve columns">
-								<label for="assoc-paynumber"> Pay Number</label>
-								<input type="text" name="assoc-paynumber" id="paycheck" maxlength="6">
 							</div>
 
 						</div>
@@ -223,7 +246,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST)) {
 							<label for="pledge-comments" id="pledge-comments-label"> Comments </label> 
 							<textarea name="comments" id="pledge-comments"> </textarea>
 						</div>
-						
+
 					</div>
 
 
@@ -252,6 +275,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST)) {
 	</body>
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="js/parsley.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
 </html>
 

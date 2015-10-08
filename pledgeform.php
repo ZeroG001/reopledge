@@ -190,11 +190,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST)) {
 							</div>
 
 						
-
-
-
-						
-
 							<div class="four columns">
 								<input class="pledge-amount-button" id="pledge-amount-50" type="radio" name="pledge_amount" value="50" /> 
 								<label for="pledge-amount-50"><span></span> $ 50 </label>
@@ -223,16 +218,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST)) {
 						</div> 
 
 
-							<div class="row">
+<!-- 							<div class="row">
 
-							<!-- 
+							 
 								<div class="twelve columns">
 									<label for="employee-amount"> Amount Donated (minimum $5) </label>
 									<input type="text" id="employee-amount" name="pledge_amount"> </input>
 								</div> 
-							-->
+							
 
-						</div>
+						</div> -->
 
 
 						<div class="row">
@@ -284,6 +279,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST)) {
 	</body>
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="js/parsley.js"> </script>
 	<script type="text/javascript" src="js/app.js"></script>
 </html>
 
