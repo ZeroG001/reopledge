@@ -91,13 +91,6 @@ http://www.colourlovers.com/palette/2462496/Wireframed
 	text-align: justify;
 }
 
-input[type="text"] {
-	box-shadow: 10px solid black;
-}
-
-
-
-
 body {
 	font-family: 'open sans', sans-serif;
 	letter-spacing: 0.02rem;
@@ -207,6 +200,7 @@ body {
 }
 
 .pledge-donar-info label {
+	position: relative;
 	display: block;
 }
 
@@ -299,7 +293,8 @@ body {
 /* Form Sections */
 .pledge-donar-info, 
 .pledge-company-checkbox,
-.pledge-check-info {
+.pledge-check-info,
+.check-amount-info {
 	box-sizing: border-box;
 	/*border: 1px solid black;*/
 	padding: 10px;
@@ -308,6 +303,7 @@ body {
 
 
 }
+
 
 /* form sections end */
 
@@ -415,6 +411,57 @@ body {
 	width: 100%;
 	height: 100px;
 	border: 0px solid black;
+}
+
+/* -------------------------------------------------------
+                Parsley Valudation Styles
+---------------------------------------------------------- */
+
+.parsley-error {
+ 
+  border-color: red;
+}
+
+.parsley-error:focus {
+  outline: none;
+}
+
+.parsley-success {
+  outline: none;
+}
+
+.form-alert-message {
+  display: none;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.form-alert-message.form-alert-valid {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+
+.form-alert-message.form-alert-invalid {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+}
+
+.fa.fa-check-circle {
+  position: absolute;
+  right: 0px;
+  z-index: 10;
+  color: green;
+}
+
+.fa.fa-exclamation-circle {
+  position: absolute;
+  right: 0px;
+  z-index: 10;
+  color: red;
 }
 
 /* Animation Styles */

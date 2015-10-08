@@ -100,144 +100,156 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST)) {
 			<!-- ========================================== -->
 
 			<!-- This form should post to a database -->
-			<form action="#" method="post" class="pledge-form form-show" id="pledge-form-sales-assoc">
+			<form action="#" method="post" class="pledge-form form-show" id="pledge-form-employee" data-parsley-errors-messages-disabled >
 
-				<input type="hidden" name="pledge_type" value="sales_assoc" />
+				<input type="hidden" name="pledge_type"value="reo_agent" />
 
 					<div class="pledge-donar-info">
-						
-						<div class="row">
-
-							<div class="six columns">
-								<label for="assoc-pledge-name"> Name </label>
-								<input type="text" id="assoc-pledge-name" name="name" />
-							</div>
-
-							<div class="six columns">
-								<label for="assoc-pledge-address"> Address </label>
-								<input type="text" id="assoc-pledge-address" name="address" />
-							</div>
-
-						</div>
-					</div>
-
-				<div class="pledge-company-checkbox">
-
-	 					<div class="row">
-
-	 						<div class="six columns">
-								<input type="radio" id="assoc-check-reo-family" name="company" value="REO-Family" />
-								<label for="assoc-check-reo-family" ><span></span> REO/MB/JJ/CR </label>
-
-								<div class="input-office-number-container">
-									<label for="check-office-number"> Office # </label>
-									<input type="text" id="" name="office_number" value="" maxlength="4"/>
-								</div>
-
-							</div>
-
-							<div class="six columns">
-								<input type="radio" id="assoc-check-capital-title" name="company" value="capital-title" />
-								<label for="assoc-check-capital-title"><span></span> Capital Title </label>
-							</div>
-
-						</div>
-
-						<div class="row">
-
-
-
-							<div class="six columns">
-								<input type="radio" id="assoc-check-jamco-front-aamc" name="company" value="jamco-font-aamc" />
-								<label for="assoc-check-jamco-front-aamc"><span></span> JAMCO/Front St/AAMC </label>
-							</div>
-
-							<div class="six columns">
-								<input type="radio" id="assoc-check-insurance-one" name="company" value="insurance-one" />
-								<label for="assoc-check-insurance-one"><span></span> Insurance One </label>
-							</div>
-
-						</div>
-						
 
 						<div class="row">
 
 							<div class="six columns">
-								<input type="radio" id="assoc-check-relo" name="company" value="insurance-one" />
-								<label for="assoc-check-relo"><span></span> Relocation America </label>
+								<label for="pledge-name"> Name </label>
+								<input type="text" id="pledge-name" name="name" data-parsley-required />
 							</div>
 
-						</div>
-
-					</div>
-
-
-					<div class="pledge-check-info">
-
-						<div class="row">
-
-							<div class="four columns">
-								<input class="pledge-amount-button" id="pledge-amount-10" type="radio" name="pledge_amount" value="10" /> 
-								<label for="pledge-amount-10"><span></span> $ 10 </label>
-							</div>
-
-							<div class="four columns">
-								<input class="pledge-amount-button" id="pledge-amount-25" type="radio" name="pledge_amount" value="25" /> 
-								<label for="pledge-amount-25" ><span></span> $ 25 </label>
-							</div>
-
-						
-							<div class="four columns">
-								<input class="pledge-amount-button" id="pledge-amount-50" type="radio" name="pledge_amount" value="50" /> 
-								<label for="pledge-amount-50"><span></span> $ 50 </label>
-							</div>
-						</div>
-
-						<div class="row">
-
-							<div class="four columns">
-								<input class="pledge-amount-button" id="pledge-amount-100" type="radio" name="pledge_amount" value="100" /> 
-								<label for="pledge-amount-100"><span></span> $ 100 </label>
-								
+							<div class="six columns">
+								<label for="pledge-address"> Address </label>
+								<input type="text" id="pledge-address" name="address" data-parsley-required />
 							</div>
 							
-						
+						</div>
+
+					</div>
+				
+					<!-- =============================== -->
+					<!-- Form 1 Section 2 - Company Info -->
+					<!-- =============================== -->
+ 					<div class="pledge-company-checkbox">
+
+ 						<div class="pledge-company-wrapper">
+
+		 					<div class="row">
+
+		 						<div class="four columns">
+									<input type="radio" id="check-reo-family" name="company" value="REO-Family" data-parsley-required />
+									<label for="check-reo-family" ><span></span> REO/MB/JJ/CR </label>
+
+									<div class="input-office-number-container">
+										<label for="check-office-number"><span></span> Office # </label>
+										<input type="text" id="" name="office_number" value="" maxlength="4"/>
+									</div>
+
+								</div>
+
+								<div class="four columns">
+									<input type="radio" id="check-capital-title" name="company" value="capital-title"  />
+									<label for="check-capital-title"><span></span> Capital Title </label>
+								</div>
+
+								<div class="four columns">
+									<input type="radio" id="check-insurance-one" name="company" value="insurance-one" />
+									<label for="check-insurance-one"><span></span> Insurance One </label>
+								</div>
+							
 
 
-						
 
-							<div class="eight columns"> 
-								<input class="pledge-amount-button-text" id="pledge-amount-other" type="radio" name="pledge_amount" value="other" /> 
-								<label for="pledge-amount-other"><span></span> Other </label> 
-								$<input type="text" maxlength="10" id="pledge-amount-other-text" />
+								</div>
+
+							<div class="row">
+								<div class="four columns">
+									<input type="radio" id="check-relo" name="company" value="insurance-one" />
+									<label for="check-relo"><span></span> Relocation America </label>
+								</div>
+
+								<div class="four columns">
+									<input type="radio" id="check-jamco-front-aamc" name="company" value="jamco-font-aamc" />
+									<label for="check-jamco-front-aamc"><span></span> JAMCO/Front St/AAMC </label>
+								</div>
 							</div>
 
-						</div> 
+						</div>
+						
+
+					</div>
 
 
-						<!--
- 							<div class="row">
- 
+					<!-- =============================== -->
+					<!-- Form 1 Section 3 - Payment Info -->
+					<!-- =============================== -->
+					<div class="pledge-check-info">
+
+						<div class="pledge-amount-wrapper">
+
+							<div class="row">
+
+								<div class="four columns">
+									<input class="pledge-amount-radio" id="pledge-amount-10" type="radio" name="pledge_amount" value="10" data-parsley-required /> 
+									<label for="pledge-amount-10"><span></span> $ 10 </label>
+								</div>
+
+								<div class="four columns">
+									<input class="pledge-amount-radio" id="pledge-amount-25" type="radio" name="pledge_amount" value="25"  /> 
+									<label for="pledge-amount-25" ><span></span> $ 25 </label>
+								</div>
+
+							
+								<div class="four columns">
+									<input class="pledge-amount-radio" id="pledge-amount-50" type="radio" name="pledge_amount" value="50"  /> 
+									<label for="pledge-amount-50"><span></span> $ 50 </label>
+								</div>
+							</div>
+
+							<div class="row">
+
+								<div class="four columns">
+									<input class="pledge-amount-radio" id="pledge-amount-100" type="radio" name="pledge_amount" value="100"  /> 
+									<label for="pledge-amount-100"><span></span> $ 100 </label>
+									
+								</div>
+														
+
+								<div class="eight columns"> 
+									<input class="pledge-amount-button-text" id="pledge-amount-other" type="radio" name="pledge_amount" value="other" /> 
+									<label for="pledge-amount-other"><span></span> Other </label> 
+									$<input type="text" maxlength="10" id="pledge-amount-other-text" />
+								</div>
+
+							</div> 
+
+						</div>
+
+					</div>
+
+
+<!-- 							<div class="row">
+
+							 
 								<div class="twelve columns">
 									<label for="employee-amount"> Amount Donated (minimum $5) </label>
 									<input type="text" id="employee-amount" name="pledge_amount"> </input>
 								</div> 
 							
-							</div>
-						 -->
 
+						</div> -->
+					<div class="check-amount-info">
 
-						<div class="row">
+					
+						<div class="check-amount-wrapper">
+							<div class="row">
 
-							<div class="six columns">
-								<input type="radio" id="check-all" name="number_of_checks" value="all" />
-								<label for="check-all"><span></span> Every <strong>Paycheck</strong> </label>
-							</div>
+								<div class="six columns">
+									<input type="radio" id="check-all" name="number_of_checks" value="all" data-parsley-required />
+									<label for="check-all"><span></span> Every <strong>Comission Check</strong> </label>
+								</div>
 
-							<div class="six columns">
-								<input type="radio" id="check-amount" name="number_of_checks" value="0" />
-								<label for="check-amount"><span></span>  Number of <strong>Paycheck(s)</strong> </label>
-								<input type="text" maxlength="3" id="check-amount-text" />
+								<div class="six columns">
+									<input type="radio" id="check-amount" name="number_of_checks" value="0" />
+									<label for="check-amount"><span></span> # of <strong>Comission Checks(s)</strong> </label>
+									<input type="text" maxlength="3" id="check-amount-text" />
+								</div>
+
 							</div>
 
 						</div>
@@ -250,6 +262,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST)) {
 					</div>
 
 
+
+
 					<!-- This is where the signature would usually be but we aren't going to add that her  -->
 
 					<div class="form-button-control"> 
@@ -257,15 +271,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST)) {
 					</div>
 
 			</form>
-
-			<div class="pledge-form pledge-form-paypal">
-
-		        <form target="_paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
-					<input type="hidden" name="cmd" value="_s-xclick" />
-					<input type="hidden" name="hosted_button_id" value="TNF2W5BDUKCWA" />
-					<input type="submit" value="Donate" name="submit" title="PayPal - The safer, easier way to pay online!" class="paypal-button-submit">
-					<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-				</form>
 
 			</div>
 
@@ -275,7 +280,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST)) {
 	</body>
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-	<script type="text/javascript" src="js/parsley.js"></script>
+	<script type="text/javascript" src="js/parsley.min.js"> </script>
 	<script type="text/javascript" src="js/app.js"></script>
 </html>
 
