@@ -12,20 +12,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST)) {
 
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 		<meta name="Viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-
 		
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="css/sk_grid.css">
-		<link rel="stylesheet" type="text/css" href="css/main.css">
-
+		<link rel="stylesheet" type="text/css" href="css/pform.css">
 
 	</head>
 
 	<body>
-
-
-
+	
 		<h3> REO Pledge Form </h3>
 
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
