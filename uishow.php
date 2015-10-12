@@ -149,9 +149,14 @@
 
 			.show-form-list {
 				margin: 0px;
-				padding: 0px;
+				padding: 1rem 0rem;
 				list-style: none;
 			}
+
+			#update-form select {
+			    height: 3.2rem;
+			}
+
 
 			@-webkit-keyframes slide-in {
 				from { left: 20px; opacity: 0; }
@@ -171,76 +176,81 @@
 
 		<div class="form-main-content"> <!-- Main content begin -->
 
-
-
 			<div class="show-form-container">
 
 			<div class="button-nav-container"> 
-				<a href="ui.html"> <div class="btn btn-primary"> Back </div> </a>
+				<a href="ui.html"> <div class="btn btn-default"> Back </div> </a>
 			</div>
 
-			<h1> Agent Form / Staff Form </h1>
+			<h2> Test </h2>
 
 
 				<ul class="show-form-list">
+
 					<li>
-						<span>Name -</span> James Jamzon
+						<span>Name -</span> <strong> James Jamzon </strong>
 					</li>
 
 					<li>
-						<span>Address -</span> 2933 Katella
+						<span>Address -</span> <strong> 2933 Katella </strong>
 					</li>
 
 					<li>
-						<span>Company -</span> REO/JJ/MB
+						<span>Company -</span> <strong> REO/JJ/MB </strong>
 					</li>
 
 					<li>
-						<span>Office Number -</span> 29
-					</li>
-
-					<li>
-						<span>Amount -</span> $10
-					</li>
-
-					<li>
-						<span>Frequency -</span> 2
-					</li>
-
-					<li> 
-						<span> Comments -</span> Don't charge me all of the time. Just some of the time.
+						<span>Office Number -</span> <strong> 29 </strong>
 					</li>
 				</ul>
 
-				<form> 
-					<span> Status - Complete</span>
+				<ul class="show-form-list">
 
-					<h3> Update Status </h3>
+					<li>
+					  <span> Pledge Amount -</span> <strong> $10 </strong>
+					</li>
+
+					<li>
+						<span> Number of Comission/Paychecks -</span> <strong> 2 </strong>
+					</li>
+
+					
+				</ul>
+
+				<ul class="show-form-list"> 
+					<li>
+						<span> Status -</span> <strong> Complete </strong>
+					</li>
+					
+					<li>
+						<span> Data Added -</span> <strong> 10/14/2015 </strong>
+					</li>
+
+					<li> 
+						<span> Comments -</span> <strong> Don't charge me all of the time. Just some of the time. </strong>
+					</li>
+				</ul>
+				
+
+				<form id="update-form" action="update.php" method="post"> 
+					<h2> Update Status </h2>
+					
 					<select name="status">
-						<option> Complete</option>
-						<option> Incomplete </option>
-						<option> Void </option>
+						<option value="processed"> Processed </option>
+						<option value="incomplete"> Incomplete </option>
+						<option value="void"> Void </option>
 					</select>
-
-					<input type="submit" value="update" />
+					
+					<input type="submit" value="Update" class="btn btn-default" />
 
 				</form>
 
 			</div>
 
-
-		</div> <!-- form main content end
+		</div> <!-- form main content end -->
 
 	</body>
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"> </script>
 	<script type="text/javascript" src="js/jquery.pjax.js"></script>
-	<script type="text/javascript">
-
-	// (function($){
-	// 	$(document).pjax('a', '.form-main-content');
-
-	// })(jQuery);
-
-	</script>
 </html>
