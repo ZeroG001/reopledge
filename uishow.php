@@ -102,11 +102,17 @@
 			}
 
 			.form-list-body .row {
+
 				-webkit-transition: 0.1s ease-in-out;
 				-moz-transition: 0.1s ease-in-out;
 				-o-transition: 0.1s ease-in-out;
 				transition: 0.1s ease-in-out;
 				
+			}
+
+			.form-list-body .row a {
+				backgrou
+				nd-color: black;
 			}
 			.form-list-body .row:hover {
 				background-color: #DBE6EC;
@@ -151,6 +157,37 @@
 				margin: 0px;
 				padding: 0px;
 				list-style: none;
+				font-size: 1.7rem;
+				padding: 2.0rem 0rem;
+			}
+
+			.button-nav-container .btn, #pledge-update-form input[type="submit"] {
+				width: 10rem;
+				padding: 0.7rem;
+			}
+
+			#pledge-update-form select {
+    			font-size: 1.7rem;
+		    	height: 35px;
+
+			}
+	
+
+			#form-list-name {
+				font-size: 1.5em;
+			}
+
+			#list-pledge-amount {
+				font-size: 2.0em;
+				color: DarkGreen;
+			}
+
+			#list-pledge-recur {
+				font-size: 1.4em;
+			}
+
+			#list-pledge-recur strong {
+				color: DarkRed;
 			}
 
 			@-webkit-keyframes slide-in {
@@ -171,76 +208,71 @@
 
 		<div class="form-main-content"> <!-- Main content begin -->
 
-
-
 			<div class="show-form-container">
 
 			<div class="button-nav-container"> 
-				<a href="ui.html"> <div class="btn btn-primary"> Back </div> </a>
+				<a href="ui.html"> <div class="btn btn-default"> Back </div> </a>
 			</div>
 
-			<h1> Agent Form / Staff Form </h1>
+			<h2> Real Estate Agent Pledge Form</h2>
+
+			<div class=""> 
+				<p> <strong> Submitted on 10/14/2015 </strong> </p>
+			</div>
+			
 
 
-				<ul class="show-form-list">
-					<li>
-						<span>Name -</span> James Jamzon
-					</li>
+			<ul class="show-form-list">
+				<li>
+					<span id="form-list-name"> James Jamzon </span>
+				</li>
 
-					<li>
-						<span>Address -</span> 2933 Katella
-					</li>
+				<li>
+					<span> 2933 Katella </span>
+				</li>
 
-					<li>
-						<span>Company -</span> REO/JJ/MB
-					</li>
+				<li>
+					<span> REO/JJ/MB </span>
+				</li>
 
-					<li>
-						<span>Office Number -</span> 29
-					</li>
+				<li>
+					<span> Office #</span> 29
+				</li>
+			</ul>
 
-					<li>
-						<span>Amount -</span> $10
-					</li>
+			<ul class="show-form-list">
 
-					<li>
-						<span>Frequency -</span> 2
-					</li>
 
-					<li> 
-						<span> Comments -</span> Don't charge me all of the time. Just some of the time.
-					</li>
-				</ul>
+				<li>
+					<span id="list-pledge-amount"> $10 </span>
+				</li>
 
-				<form> 
-					<span> Status - Complete</span>
+				<li>
+					<span id="list-pledge-recur"> For <strong> 1 </strong> Comission/Paychecks </span>
+				</li>
+			</ul>
 
+				<form id="pledge-update-form"> 
+	
 					<h3> Update Status </h3>
 					<select name="status">
-						<option> Complete</option>
+						<option> Processed </option>
 						<option> Incomplete </option>
 						<option> Void </option>
 					</select>
 
-					<input type="submit" value="update" />
+					<input class="btn btn-default" type="submit" value="update" />
 
 				</form>
 
 			</div>
 
 
-		</div> <!-- form main content end
+		</div> <!-- form main content end -->
 
 	</body>
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"> </script>
 	<script type="text/javascript" src="js/jquery.pjax.js"></script>
-	<script type="text/javascript">
 
-	// (function($){
-	// 	$(document).pjax('a', '.form-main-content');
-
-	// })(jQuery);
-
-	</script>
 </html>
