@@ -102,11 +102,17 @@
 			}
 
 			.form-list-body .row {
+
 				-webkit-transition: 0.1s ease-in-out;
 				-moz-transition: 0.1s ease-in-out;
 				-o-transition: 0.1s ease-in-out;
 				transition: 0.1s ease-in-out;
 				
+			}
+
+			.form-list-body .row a {
+				backgrou
+				nd-color: black;
 			}
 			.form-list-body .row:hover {
 				background-color: #DBE6EC;
@@ -151,6 +157,37 @@
 				margin: 0px;
 				padding: 1rem 0rem;
 				list-style: none;
+				font-size: 1.7rem;
+				padding: 2.0rem 0rem;
+			}
+
+			.button-nav-container .btn, #pledge-update-form input[type="submit"] {
+				width: 10rem;
+				padding: 0.7rem;
+			}
+
+			#pledge-update-form select {
+    			font-size: 1.7rem;
+		    	height: 35px;
+
+			}
+	
+
+			#form-list-name {
+				font-size: 1.5em;
+			}
+
+			#list-pledge-amount {
+				font-size: 2.0em;
+				color: DarkGreen;
+			}
+
+			#list-pledge-recur {
+				font-size: 1.4em;
+			}
+
+			#list-pledge-recur strong {
+				color: DarkRed;
 			}
 
 			#update-form select {
@@ -182,66 +219,53 @@
 				<a href="ui.html"> <div class="btn btn-default"> Back </div> </a>
 			</div>
 
-			<h2> Test </h2>
+
+			<h2> Real Estate Agent Pledge Form</h2>
+
+			<div class=""> 
+				<p> <strong> Submitted on 10/14/2015 </strong> </p>
+			</div>
+			
 
 
-				<ul class="show-form-list">
+			<ul class="show-form-list">
+				<li>
+					<span id="form-list-name"> James Jamzon </span>
+				</li>
 
-					<li>
-						<span>Name -</span> <strong> James Jamzon </strong>
-					</li>
+				<li>
+					<span> 2933 Katella </span>
+				</li>
 
-					<li>
-						<span>Address -</span> <strong> 2933 Katella </strong>
-					</li>
+				<li>
+					<span> REO/JJ/MB </span>
+				</li>
 
-					<li>
-						<span>Company -</span> <strong> REO/JJ/MB </strong>
-					</li>
+				<li>
+					<span> Office #</span> 29
+				</li>
+			</ul>
 
-					<li>
-						<span>Office Number -</span> <strong> 29 </strong>
-					</li>
-				</ul>
+			<ul class="show-form-list">
 
-				<ul class="show-form-list">
 
-					<li>
-					  <span> Pledge Amount -</span> <strong> $10 </strong>
-					</li>
+				<li>
+					<span id="list-pledge-amount"> $10 </span>
+				</li>
 
-					<li>
-						<span> Number of Comission/Paychecks -</span> <strong> 2 </strong>
-					</li>
+				<li>
+					<span id="list-pledge-recur"> For <strong> 1 </strong> Comission/Paychecks </span>
+				</li>
+			</ul>
 
-					
-				</ul>
-
-				<ul class="show-form-list"> 
-					<li>
-						<span> Status -</span> <strong> Complete </strong>
-					</li>
-					
-					<li>
-						<span> Data Added -</span> <strong> 10/14/2015 </strong>
-					</li>
-
-					<li> 
-						<span> Comments -</span> <strong> Don't charge me all of the time. Just some of the time. </strong>
-					</li>
-				</ul>
-				
-
-				<form id="update-form" action="update.php" method="post"> 
-					<h2> Update Status </h2>
-					
+				<form id="pledge-update-form"> 
+	
+					<h3> Update Status </h3>
 					<select name="status">
-						<option value="processed"> Processed </option>
-						<option value="incomplete"> Incomplete </option>
-						<option value="void"> Void </option>
+						<option> Processed </option>
+						<option> Incomplete </option>
+						<option> Void </option>
 					</select>
-					
-					<input type="submit" value="Update" class="btn btn-default" />
 
 				</form>
 
@@ -253,4 +277,5 @@
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"> </script>
 	<script type="text/javascript" src="js/jquery.pjax.js"></script>
+
 </html>
