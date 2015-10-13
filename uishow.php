@@ -222,7 +222,7 @@
 
 			<h2> Real Estate Agent Pledge Form</h2>
 
-			<div class=""> 
+			<div > 
 				<p> <strong> Submitted on 10/14/2015 </strong> </p>
 			</div>
 			
